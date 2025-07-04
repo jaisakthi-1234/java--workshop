@@ -9,8 +9,11 @@ public class Building {
     private int floors;
     private LocalDateTime openDateTime;
     private LocalDateTime closDateTime;
-    public static void main(String[] args) {
-      
+
+    
+    
+    public void printdetails(){
+        System.out.println(name);
+    }
     }
 
-}
