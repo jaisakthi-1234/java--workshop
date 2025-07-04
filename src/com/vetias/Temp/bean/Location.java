@@ -27,7 +27,53 @@ public class Location {
         longitude =aLongitude;
 
     }
-    public double 
+    public double setlongitude(){
+        return longitude;
+    }
+    public void setDescription(String aDescription){
+        description =aDescription;
+    }
+    public String setDescription(){
+        return description;
+    }
+    public void setCountry(String aCountry){
+        country = aCountry;
+    }
+    public String setCountry(){
+        return country;
+    }
+    public void setCity(String aCity){
+        city = aCity;
+    }
+    public String setCity(){
+        return city;
+    }
+    public void setAddress(String aAddress){
+        address = aAddress;
+    }
+    public String setAddress(){
+        return address;
+    }
+    public void setPostalcode(String aPostalcode){
+        postalcode = aPostalcode;
+    }
+    public String setPostalcode(){
+        return postalcode;
+    }
+
+    @Override
+    public String toString(){
+        return "Location { name:" + name +
+               ", Latitude: " + latitude +
+               ", Longitude: " + longitude +
+               ", Description: " + description +
+               ", Country: " + country +
+               ", City: " + city +
+               ",  Address: " + address +
+               ",  Postalcode: " + postalcode +
+    
+    }
+
 
 }
  
