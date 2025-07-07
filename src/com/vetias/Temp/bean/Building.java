@@ -15,5 +15,9 @@ public class Building {
     public void printdetails(){
         System.out.println(name);
     }
+    // public static void main(String[] args) {
+    //     Location location = new Location();
+    //     System.out.println(location.toString());
+    // }
     }
 

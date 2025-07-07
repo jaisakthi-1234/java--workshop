@@ -27,37 +27,37 @@ public class Location {
         longitude =aLongitude;
 
     }
-    public double setlongitude(){
+    public double getlongitude(){
         return longitude;
     }
     public void setDescription(String aDescription){
         description =aDescription;
     }
-    public String setDescription(){
+    public String getDescription(){
         return description;
     }
     public void setCountry(String aCountry){
         country = aCountry;
     }
-    public String setCountry(){
+    public String getCountry(){
         return country;
     }
     public void setCity(String aCity){
         city = aCity;
     }
-    public String setCity(){
+    public String getCity(){
         return city;
     }
-    public void setAddress(String aAddress){
+    public void setAddress(String aAddress){ 
         address = aAddress;
     }
-    public String setAddress(){
+    public String getAddress(){
         return address;
     }
     public void setPostalcode(String aPostalcode){
         postalcode = aPostalcode;
     }
-    public String setPostalcode(){
+    public String getPostalcode(){
         return postalcode;
     }
 
@@ -70,7 +70,7 @@ public class Location {
                ", Country: " + country +
                ", City: " + city +
                ",  Address: " + address +
-               ",  Postalcode: " + postalcode +
+               ",  Postalcode: " + postalcode ;
     
     }
 
