@@ -14,5 +14,7 @@ public class StringBuilderexample {
         sb.append(" enterprise");
         sb.append(" application");
         System.out.println(sb.toString());
+
+
     }
 }

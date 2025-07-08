@@ -71,6 +71,7 @@ public class Location {
                ", City: " + city +
                ",  Address: " + address +
                ",  Postalcode: " + postalcode ;
+               
     
     }
 
