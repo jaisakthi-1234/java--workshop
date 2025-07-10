@@ -11,4 +11,11 @@ public class WordCountTest {
         Assertions.assertEquals(10, count);
      }
 
+     @Test
+     public void testAnotherString(){
+      WordCount wordCount = new WordCount();
+      int count = wordCount.count("jai");
+      Assertions.assertEquals(3, count);
+     }
+
 }
