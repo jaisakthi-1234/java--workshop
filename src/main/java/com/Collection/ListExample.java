@@ -15,6 +15,7 @@ public class ListExample {
         names.add("siva");
 
         System.out.println(names);
+        names.set(1, "krishan");
         for(int i = 0;i< names.size();i++){
             System.out.println(names.get(i));
         }
