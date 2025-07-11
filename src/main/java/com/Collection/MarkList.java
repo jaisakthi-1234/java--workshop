@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MarkList {
-       public class Marklist {
+       
 
     public static void main(String[] args) {
         List<Integer> marks = new ArrayList<>();
@@ -18,10 +18,9 @@ public class MarkList {
         
         Collections.sort(marks);
         System.out.println("Ascending order: " + marks);
-
         
         Collections.sort(marks, Collections.reverseOrder());
         System.out.println("Descending order: " + marks);
     }
 }
-}
+
