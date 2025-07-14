@@ -1,6 +1,7 @@
 package com.String;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StreamUpperCaseNames {
      public static void main(String[] args) {
@@ -12,8 +13,7 @@ public class StreamUpperCaseNames {
         names.add("mugu");
         names.add("siva");
         names.stream()
-
-        .filter(name -> name.startWith("S") ||name.startWith("s"))
+        .filter(name -> name.startsWith("S") ||name.startsWith("m"))
         .distinct().map(String::toUpperCase).forEach(System.out::println);
 
 }
