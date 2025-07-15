@@ -7,8 +7,16 @@ import java.sql.SQLException;
 
 public class OrganationDao {
    
-   public void createTable(Connection dbConnection) {
-       try(Statement statement= dbConnection.createStatement()){
+   public void createTable() {
+        try {
+         Class.forName("org.h2.Driver");
+      } catch (ClassNotFoundException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+     
+       try(Connection  dbConnection=DriverManager.getConnection("jdbc:h2:mem:tempdataDB", "sa", null);
+       Statement statement= dbConnection.createStatement()){
 
          statement.execute("""
                      create table organation(
@@ -24,6 +32,12 @@ public class OrganationDao {
      }
 
        }
+
+
+
+
+       
+      }
    //   JdbcDataSource.h2DataSource =new JdbcDataScource();
    //   h2DataSource.setUr1("jdbc:h2:mem:tempdataDB");
    //   h2DataSource.setUser("sa");
@@ -57,6 +71,6 @@ public class OrganationDao {
 
 
     
-}
 
-}
+
+
