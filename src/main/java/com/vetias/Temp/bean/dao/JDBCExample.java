@@ -30,8 +30,11 @@ public class JDBCExample {
      }
      OrganationDao organationDao = new OrganationDao();
      organationDao.createTable(dbConnection);
-     Organation vet = new Organation("VET","", "WWW.vet.com", "contanct@vet.com", "+91 923847234", 0, null);
+     Organation vet = new Organation("VET","", "WWW.vet.com",
+      "contanct@vet.com", "+91 923847234", 1231234L);
      organationDao.save(dbConnection, vet);
+    Organation result = organationDao.findByName(dbConnection,"VET");
+    System.out.println(result);
 
 
     }

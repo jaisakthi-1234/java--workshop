@@ -7,6 +7,7 @@ import com.vetias.Temp.bean.Organation;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OrganationDao {
@@ -18,6 +19,7 @@ public class OrganationDao {
 
          statement.execute("""
                      create table organation(
+                       id int AUTO_INCREMENT PRIMARY KEY,
                        NAME VARCHAR(100),
                        WEBSITE VARCHAR(100),
                        EMAIL VARCHAR(100),
@@ -35,16 +37,15 @@ public class OrganationDao {
 public int save(Connection dbConnection, Organation vet){
 
    try(PreparedStatement preparedStatement = dbConnection.prepareStatement("""
-       insert into organization(name,email,contant number,
-       registration_no,description)values(?,?,?,?,?,?)
-       
-              """ )){
+       insert into organation(NAME,WEBSITE,EMAIL,
+       CONTACT_NUMBER,REGISTRATION_NO)values(?,?,?,?,?)
+       """ )){
                preparedStatement.setString(1,vet.name());
                preparedStatement.setString(2,vet.website());
                preparedStatement.setString(3,vet.email());
                preparedStatement.setString(4,vet.contactNumber());
                preparedStatement.setLong(5,vet.registrationNumber());
-            //   preparedStatement.setTime(6, vet.registrationDate());
+            
                preparedStatement.executeUpdate();
             
               }catch (SQLException sqlException){
@@ -53,7 +54,26 @@ public int save(Connection dbConnection, Organation vet){
    return 0;
 
 }
-
+         public Organation findByName (Connection dbConnection,String name) {
+              Organation organation=null;
+              try(PreparedStatement preparedStatement=dbConnection.prepareStatement("""
+                    select * from organation where name = ?
+                    """)){
+                     preparedStatement.setString(1, name);
+                     ResultSet  resultSet = preparedStatement.executeQuery();
+                     if(resultSet !=null && resultSet.next()) {
+                        organation = new Organation (resultSet.getString("NAME"),
+                        resultSet.getString("WEBSITE"),
+                        resultSet.getString("EMAIL"),
+                        resultSet.getString("CONTACT_NUMBER"),
+                        name, resultSet.getLong("REGISTRATION_NO"));
+                     }
+                       
+                    }catch(SQLException exception){
+                     System.out.println("Exception while fetching the data"+ exception);
+                    }
+              return organation;
+         }
 
       }
    //   JdbcDataSource.h2DataSource =new JdbcDataScource();

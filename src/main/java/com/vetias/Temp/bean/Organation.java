@@ -7,8 +7,7 @@ public record Organation(String name,
         String website,
         String email,
         String contactNumber,
-        long registrationNumber,
-        LocalDate registrationDate) {
+        long registrationNumber) {
 
 
 }
